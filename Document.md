@@ -32,6 +32,7 @@ React, Next
 Redux
 Redux-saga
 Styled Components
+Ant Design
 
 ### 백 엔드 서버
 
@@ -42,3 +43,47 @@ Passport
 multer (S3)
 Socket.IO
 이미지 압축 (람다)
+
+## 프론트 엔드 기술
+
+### 리덕스
+
+: Redux (state) -> React 의 state 를 안 써도 된다.
+
+사용 목적: 안정성, state 통제 용이
+
+- Store
+- Action
+- Dispatch
+- Reducer
+
+단점: 코드가 장황해진다.
+
+#### 리덕스 상세 설명
+
+1. Store
+
+```js
+// root state
+{
+  // user state
+  isLoggedIn : false // 로그인 여부 -> A, C
+  user: {}, // 로그인한 사용자 -> B, C
+
+  // post state
+  mainPosts: [] // 메인 게시글들 -> C
+}
+```
+
+2. Action : state를 바꾸는 행동 (예: 로그인 액션)
+
+3. Dispatch : Action을 실행 (예: 로그인 액션 Dispatch)
+
+4. Reducer : Action 의 결과로 state를 어떻게 바꿀지 정의 (예: isLoggedIn state를 true로)
+
+next-redux-wrapper 설치
+목적: provider 에 store를 넣어주는 부분을 해준다.
+
+```bash
+yarn add next-redux-wrapper
+```

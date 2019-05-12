@@ -460,156 +460,16 @@ info All dependencies
 yarn add -D nodemon webpack
 ```
 
-yarn add v1.16.0
-[1/4] 🔍 Resolving packages...
-[2/4] 🚚 Fetching packages...
-[3/4] 🔗 Linking dependencies...
-[4/4] 🔨 Building fresh packages...
-success Saved lockfile.
-success Saved 58 new dependencies.
-info Direct dependencies
-├─ nodemon@1.19.0
-└─ webpack@4.31.0
-info All dependencies
-├─ @webassemblyjs/helper-wasm-section@1.8.5
-├─ @webassemblyjs/wasm-edit@1.8.5
-├─ @webassemblyjs/wasm-opt@1.8.5
-├─ ansi-align@2.0.0
-├─ boxen@1.3.0
-├─ camelcase@4.1.0
-├─ capture-stack-trace@1.0.1
-├─ ci-info@1.6.0
-├─ cli-boxes@1.0.0
-├─ configstore@3.1.2
-├─ create-error-class@3.0.2
-├─ cross-spawn@5.1.0
-├─ crypto-random-string@1.0.0
-├─ dot-prop@4.2.0
-├─ duplexer3@0.1.4
-├─ execa@0.7.0
-├─ global-dirs@0.1.1
-├─ got@6.7.1
-├─ ignore-by-default@1.0.1
-├─ import-lazy@2.1.0
-├─ is-ci@1.2.1
-├─ is-installed-globally@0.1.0
-├─ is-npm@1.0.0
-├─ is-obj@1.0.1
-├─ is-redirect@1.0.0
-├─ is-retry-allowed@1.1.0
-├─ is-stream@1.1.0
-├─ isexe@2.0.0
-├─ latest-version@3.1.0
-├─ lowercase-keys@1.0.1
-├─ mamacro@0.0.3
-├─ nodemon@1.19.0
-├─ nopt@1.0.10
-├─ npm-run-path@2.0.2
-├─ p-finally@1.0.0
-├─ package-json@4.0.1
-├─ path-key@2.0.1
-├─ prepend-http@1.0.4
-├─ pseudomap@1.0.2
-├─ pstree.remy@1.1.6
-├─ registry-auth-token@3.4.0
-├─ registry-url@3.1.0
-├─ semver-diff@2.1.0
-├─ shebang-command@1.2.0
-├─ shebang-regex@1.0.0
-├─ strip-eof@1.0.0
-├─ term-size@1.2.0
-├─ timed-out@4.0.1
-├─ touch@3.1.0
-├─ undefsafe@2.0.2
-├─ unique-string@1.0.0
-├─ unzip-response@2.0.1
-├─ update-notifier@2.5.0
-├─ url-parse-lax@1.0.0
-├─ webpack@4.31.0
-├─ which@1.3.1
-├─ widest-line@2.0.1
-└─ write-file-atomic@2.4.2
-✨ Done in 4.86s.
-
 ```bash
 yarn add -D eslint eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks
 ```
 
-yarn add v1.16.0
-[1/4] 🔍 Resolving packages...
-[2/4] 🚚 Fetching packages...
-[3/4] 🔗 Linking dependencies...
-[4/4] 🔨 Building fresh packages...
-success Saved lockfile.
-success Saved 60 new dependencies.
-info Direct dependencies
-├─ eslint-plugin-import@2.17.2
-├─ eslint-plugin-react-hooks@1.6.0
-├─ eslint-plugin-react@7.13.0
-└─ eslint@5.16.0
-info All dependencies
-├─ acorn-jsx@5.0.1
-├─ ansi-escapes@3.2.0
-├─ argparse@1.0.10
-├─ astral-regex@1.0.0
-├─ callsites@3.1.0
-├─ chardet@0.7.0
-├─ cli-cursor@2.1.0
-├─ cli-width@2.2.0
-├─ contains-path@0.1.0
-├─ cross-spawn@6.0.5
-├─ deep-is@0.1.3
-├─ doctrine@1.5.0
-├─ emoji-regex@7.0.3
-├─ eslint-import-resolver-node@0.3.2
-├─ eslint-module-utils@2.4.0
-├─ eslint-plugin-import@2.17.2
-├─ eslint-plugin-react-hooks@1.6.0
-├─ eslint-plugin-react@7.13.0
-├─ eslint-utils@1.3.1
-├─ eslint@5.16.0
-├─ espree@5.0.1
-├─ esprima@4.0.1
-├─ esquery@1.0.1
-├─ external-editor@3.0.3
-├─ fast-levenshtein@2.0.6
-├─ figures@2.0.0
-├─ file-entry-cache@5.0.1
-├─ flat-cache@2.0.1
-├─ flatted@2.0.0
-├─ functional-red-black-tree@1.0.1
-├─ ignore@4.0.6
-├─ import-fresh@3.0.0
-├─ inquirer@6.3.1
-├─ is-promise@2.1.0
-├─ js-yaml@3.13.1
-├─ json-stable-stringify-without-jsonify@1.0.1
-├─ jsx-ast-utils@2.1.0
-├─ levn@0.3.0
-├─ mimic-fn@1.2.0
-├─ mute-stream@0.0.7
-├─ natural-compare@1.4.0
-├─ nice-try@1.0.5
-├─ object.fromentries@2.0.0
-├─ onetime@2.0.1
-├─ optionator@0.8.2
-├─ parent-module@1.0.1
-├─ read-pkg-up@2.0.0
-├─ regexpp@2.0.1
-├─ resolve-from@4.0.0
-├─ restore-cursor@2.0.0
-├─ run-async@2.3.0
-├─ rxjs@6.5.2
-├─ slice-ansi@2.1.0
-├─ sprintf-js@1.0.3
-├─ table@5.3.3
-├─ text-table@0.2.0
-├─ through@2.3.8
-├─ tmp@0.0.33
-├─ wordwrap@1.0.0
-└─ write@1.0.3
-✨ Done in 7.79s.
-
 ```bash
 mkdir pages
+```
+
+리덕스 추가
+
+```bash
+yarn add redux react-redux
 ```

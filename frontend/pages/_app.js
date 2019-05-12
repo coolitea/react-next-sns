@@ -1,11 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
-import AppLayout from '../components/AppLayout';
 import PropTypes from 'prop-types';
+import withRedux from 'next-redux-wrapper';
+import AppLayout from '../components/AppLayout';
+import { createStore, compose, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from '../reducers';
 
-const CoolSns = ({ Component }) => {
+const CoolSns = ({ Component, store }) => {
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <title>Cool SNS</title>
         <link
@@ -17,12 +21,29 @@ const CoolSns = ({ Component }) => {
       <AppLayout>
         <Component />
       </AppLayout>
-    </>
+    </Provider>
   );
 };
 
 CoolSns.propTypes = {
-  Component: PropTypes.elementType
+  Component: PropTypes.elementType,
+  store: PropTypes.object
 };
 
-export default CoolSns;
+// Redux DevTools Extension : http://extension.remotedev.io
+export default withRedux((initialState, options) => {
+  const middlewares = [];
+
+  const enhancer = compose(
+    applyMiddleware(...middlewares),
+
+    (typeof window !== 'undefined' &&
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
+      compose
+  );
+
+  const store = createStore(reducer, initialState, enhancer);
+
+  return store;
+})(CoolSns);
