@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+// import React, { useEffect } from 'react';
 import PostForm from '../components/PostForm';
 import PostCard from '../components/PostCard';
-import { useDispatch, useSelector } from 'react-redux';
-import { loginAction, logoutAction } from '../reducers/user';
+import { useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { loginAction, logoutAction } from '../reducers/user';
 
 const Home = () => {
   const { isLoggedIn, user } = useSelector(state => state.user);
@@ -12,13 +14,13 @@ const Home = () => {
   // Redux DevTools 사용 시 활성화
   // Sample case : Login -> Logout -> Login
   // Production 배포 시 비활성화 해야 함
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    // dispatch(loginAction);
-    // dispatch(logoutAction);
-    // dispatch(loginAction);
-  }, []);
+  // useEffect(() => {
+  // dispatch(loginAction);
+  // dispatch(logoutAction);
+  // dispatch(loginAction);
+  // }, []);
   //------ Redux DevTools end ------
 
   return (
