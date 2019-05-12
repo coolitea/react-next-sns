@@ -6,6 +6,8 @@ import AppLayout from '../components/AppLayout';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from '../reducers';
+import sagaMiddleware from '../sagas/middleware';
+import rootSaga from '../sagas';
 
 const CoolSns = ({ Component, store }) => {
   return (
@@ -30,20 +32,22 @@ CoolSns.propTypes = {
   store: PropTypes.object
 };
 
-// Redux DevTools Extension : http://extension.remotedev.io
 export default withRedux((initialState, options) => {
-  const middlewares = [];
+  const middlewares = [sagaMiddleware];
 
-  const enhancer = compose(
-    applyMiddleware(...middlewares),
-
-    (typeof window !== 'undefined' &&
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
-      compose
-  );
-
+  // 배포 버전에서는 REDUX_DEVTOOLS 비활성화
+  const enhancer =
+    process.env.NODE_ENV === 'production'
+      ? compose(applyMiddleware(...middlewares))
+      : compose(
+          // Redux DevTools Extension : http://extension.remotedev.io
+          applyMiddleware(...middlewares),
+          (typeof window !== 'undefined' &&
+            window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+            window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
+            compose
+        );
   const store = createStore(reducer, initialState, enhancer);
-
+  sagaMiddleware.run(rootSaga);
   return store;
 })(CoolSns);

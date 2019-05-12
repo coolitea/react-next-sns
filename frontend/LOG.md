@@ -468,6 +468,8 @@ yarn add -D eslint eslint-plugin-import eslint-plugin-react eslint-plugin-react-
 mkdir pages
 ```
 
+## Redux
+
 리덕스 7.1 이상 버전 추가
 
 ```bash
@@ -475,3 +477,14 @@ yarn add redux react-redux
 또는
 yarn add redux react-redux@next
 ```
+
+## Redux-saga
+
+목적 : 비동기 처리
+
+### 비동기 라이브러리 선택
+
+- [ ] redux-thunk : 사용이 쉬움
+- [x] redux-saga : 강력한 기능
+
+take: 해당 액션이 dispatch 되면 제너레이터를 next하는 이펙트
