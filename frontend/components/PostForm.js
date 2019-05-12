@@ -1,37 +1,13 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
-
-const dummy = {
-  isLoggedIn: true,
-  imagePaths: [],
-  mainPosts: [
-    {
-      User: {
-        id: 1,
-        nickname: 'hjpark'
-      },
-      content: '첫 번째 게시글',
-      createdAt: '2018-04-14',
-      img:
-        'https://i.pinimg.com/originals/95/19/7c/95197c7913c228e33e9a99bbc19d736b.jpg'
-    },
-    {
-      User: {
-        id: 2,
-        nickname: 'hjpark'
-      },
-      content: 'Miniature Schnauzer',
-      createdAt: '2017-02-06',
-      img:
-        'https://i.pinimg.com/originals/53/c6/20/53c6209adbdc694f9fd5764b6cc73c70.jpg'
-    }
-  ]
-};
+import { useSelector } from 'react-redux';
 
 const PostForm = () => {
+  const { imagePaths } = useSelector(state => state.post);
+
   return (
     <Form encType="multipart/form-data" style={{ marginBottom: 20 }}>
-      <Input.TextArea maxLength={140} placeholder="어떤일이 있었나요?" />
+      <Input.TextArea maxLength={140} placeholder="어떤 있는 일이 있었나요?" />
       <div>
         <input type="file" multiple hidden />
         <Button>이미지 업로드</Button>
@@ -40,7 +16,7 @@ const PostForm = () => {
         </Button>
       </div>
       <div>
-        {dummy.imagePaths.map((v, i) => {
+        {imagePaths.map((v, i) => {
           return (
             <div key={v} style={{ display: 'inline-block' }}>
               <img

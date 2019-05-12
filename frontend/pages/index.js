@@ -1,36 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PostForm from '../components/PostForm';
 import PostCard from '../components/PostCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginAction, logoutAction } from '../reducers/user';
 
-const dummy = {
-  isLoggedIn: true,
-  imagePaths: [],
-  mainPosts: [
-    {
-      User: {
-        id: 1,
-        nickname: 'hjpark'
-      },
-      content: '첫 번째 게시글',
-      img:
-        'https://i.pinimg.com/originals/95/19/7c/95197c7913c228e33e9a99bbc19d736b.jpg'
-    },
-    {
-      User: {
-        id: 2,
-        nickname: 'hjpark'
-      },
-      content: 'Miniature Schnauzer',
-      img:
-        'https://i.pinimg.com/originals/53/c6/20/53c6209adbdc694f9fd5764b6cc73c70.jpg'
-    }
-  ]
-};
 const Home = () => {
+  const { isLoggedIn, user } = useSelector(state => state.user);
+  const { mainPosts } = useSelector(state => state.post);
+
+  //------ Redux DevTools start ------
+  // Redux DevTools 사용 시 활성화
+  // Sample case : Login -> Logout -> Login
+  // Production 배포 시 비활성화 해야 함
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // dispatch(loginAction);
+    // dispatch(logoutAction);
+    // dispatch(loginAction);
+  }, []);
+  //------ Redux DevTools end ------
+
   return (
     <div style={{ margin: '10px 0 20px 0' }}>
-      {dummy.isLoggedIn && <PostForm />}
-      {dummy.mainPosts.map(c => {
+      {user ? (
+        <div>{user.nickname}님, 반갑습니다.</div>
+      ) : (
+        <div>로그인 상태가 아닙니다.</div>
+      )}
+      {isLoggedIn && <PostForm />}
+      {mainPosts.map(c => {
         return <PostCard key={c} post={c} />;
       })}
     </div>

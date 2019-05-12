@@ -468,8 +468,10 @@ yarn add -D eslint eslint-plugin-import eslint-plugin-react eslint-plugin-react-
 mkdir pages
 ```
 
-리덕스 추가
+리덕스 7.1 이상 버전 추가
 
 ```bash
 yarn add redux react-redux
+또는
+yarn add redux react-redux@next
 ```
